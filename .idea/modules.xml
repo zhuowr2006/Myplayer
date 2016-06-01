@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/libraries/DanmakuFlameMaster/DanmakuFlameMaster.iml" filepath="$PROJECT_DIR$/libraries/DanmakuFlameMaster/DanmakuFlameMaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Myplayer.iml" filepath="$PROJECT_DIR$/Myplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/PullToRefreshRecyclerViewLibrary/PullToRefreshRecyclerViewLibrary.iml" filepath="$PROJECT_DIR$/libraries/PullToRefreshRecyclerViewLibrary/PullToRefreshRecyclerViewLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/convenientbanner/convenientbanner.iml" filepath="$PROJECT_DIR$/libraries/convenientbanner/convenientbanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/flowlayout-lib/flowlayout-lib.iml" filepath="$PROJECT_DIR$/libraries/flowlayout-lib/flowlayout-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ijkplayer-arm64/ijkplayer-arm64.iml" filepath="$PROJECT_DIR$/libraries/ijkplayer-arm64/ijkplayer-arm64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ijkplayer-armv5/ijkplayer-armv5.iml" filepath="$PROJECT_DIR$/libraries/ijkplayer-armv5/ijkplayer-armv5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ijkplayer-armv7a/ijkplayer-armv7a.iml" filepath="$PROJECT_DIR$/libraries/ijkplayer-armv7a/ijkplayer-armv7a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/ijkplayer-java/ijkplayer-java.iml" filepath="$PROJECT_DIR$/libraries/ijkplayer-java/ijkplayer-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/xUtilslibrary/xUtilslibrary.iml" filepath="$PROJECT_DIR$/libraries/xUtilslibrary/xUtilslibrary.iml" />
+    </modules>
+  </component>
+</project>

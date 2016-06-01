@@ -1,0 +1,3 @@
+include ':app',':libraries:PullToRefreshRecyclerViewLibrary',':libraries:convenientbanner',':libraries:flowlayout-lib',
+        ':libraries:ijkplayer-arm64',':libraries:ijkplayer-armv5',':libraries:ijkplayer-armv7a',':libraries:ijkplayer-java',':libraries:DanmakuFlameMaster',
+        ':libraries:xUtilslibrary'
