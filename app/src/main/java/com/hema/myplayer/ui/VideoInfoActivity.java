@@ -235,6 +235,8 @@ public class VideoInfoActivity extends Activity implements View.OnClickListener,
                         String url = js.getString("src").toString();
                         String danmakuPath = js.getString("cid").toString();
                         if (gototype==1){
+                            //直接传入直播地址可以直播
+//                            com.hema.playViewUtil.ui.VideoActivity.intentTo(VideoInfoActivity.this, "rtmp://203.207.99.19:1935ve/CCTV1", videoinfo.getTitle());
                             com.hema.playViewUtil.ui.VideoActivityex.intentTo(VideoInfoActivity.this, url,danmakuPath, videoinfo.getTitle());
                         }else {
                             Intent intent=new Intent(VideoInfoActivity.this,DownloadActivity.class);
