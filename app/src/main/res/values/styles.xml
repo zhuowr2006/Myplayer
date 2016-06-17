@@ -51,5 +51,13 @@
         <item name="android:progressDrawable">@drawable/progressbar_color</item>
         <item name="android:thumb">@drawable/progressbar_yuan</item>
     </style>
+    <!-- 自定义 ProgressBar -->
+    <style name="mProgress_circle">
+        <item name="android:indeterminateDrawable">@drawable/progressbar_circle_1</item>
+        <item name="android:minWidth">25dp</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:maxHeight">60dp</item>
+    </style>
 
 </resources>

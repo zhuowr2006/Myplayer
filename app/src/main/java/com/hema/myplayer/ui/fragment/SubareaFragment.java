@@ -13,6 +13,7 @@ import android.widget.GridView;
 import com.hema.myplayer.R;
 import com.hema.myplayer.base.BaseFragment;
 import com.hema.myplayer.ui.MainItemActivity;
+import com.hema.myplayer.ui.TVActivity;
 import com.hema.myplayer.ui.adapter.sb_gidAdapter;
 
 /**
@@ -25,7 +26,7 @@ public class SubareaFragment extends BaseFragment {
     private View layoutView;
     //标签
     private String[] mVals = new String[]
-            {"动画","音乐","游戏 "," 娱乐","电视剧","番剧","电影","科技","鬼畜","舞蹈","时尚"};
+            {"动画","音乐","游戏 "," 娱乐","电视剧","番剧","电影","科技","鬼畜","舞蹈","时尚","直播"};
     private GridView gridView;
     @Override
     public void onAttach(Activity activity) {
@@ -62,6 +63,7 @@ public class SubareaFragment extends BaseFragment {
           @Override
           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
               Intent intent =new Intent();
+              boolean isonline=false;
               switch (position) {
                   case 0:
                       intent.putExtra("type",0);
@@ -96,10 +98,19 @@ public class SubareaFragment extends BaseFragment {
                   case 10:
                       intent.putExtra("type",10);
                       break;
+                  case 11:
+                      intent.putExtra("type",11);
+                      isonline=true;
+                      break;
 
               }
-              intent.setClass(mActivity, MainItemActivity.class);
-              mActivity.startActivity(intent);
+              if (isonline){
+                  intent.setClass(mActivity, TVActivity.class);
+                  mActivity.startActivity(intent);
+              }else {
+                  intent.setClass(mActivity, MainItemActivity.class);
+                  mActivity.startActivity(intent);
+              }
           }
       });
 

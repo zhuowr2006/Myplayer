@@ -91,6 +91,10 @@ public class sb_gidAdapter extends BaseAdapter{
                     viewHolder.img.setImageResource(R.mipmap.ss_icon);
                     viewHolder.title.setText("时尚");
                     break;
+                case 11:
+                    viewHolder.img.setImageResource(R.mipmap.zb_icon);
+                    viewHolder.title.setText("直播");
+                    break;
             }
         }
         return convertView;

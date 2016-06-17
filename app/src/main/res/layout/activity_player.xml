@@ -48,6 +48,16 @@
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             tools:context=".toolbar_widget" />
+        <ProgressBar
+            android:id="@+id/loading_icon"
+            style="@style/mProgress_circle"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/loadstate_tv"
+            android:indeterminateDuration="1500"
+            android:visibility="gone"
+            />
     </FrameLayout>
 
     <!-- The navigation drawer -->
