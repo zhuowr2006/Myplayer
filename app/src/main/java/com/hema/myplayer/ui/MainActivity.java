@@ -9,9 +9,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.hema.myplayer.R;
 import com.hema.myplayer.ui.fragment.AttentionFragment;
@@ -24,24 +26,24 @@ import com.hema.myplayer.util.ActivityTools;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, AppBarLayout.OnOffsetChangedListener {
 
+    public boolean sz = false;//顶部是不是展开
     private DrawerLayout drawerLayout;
     private AppBarLayout main_ap_layout;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Adapter adapter;
-
     //侧边布局
     private ImageView logo;
     private LinearLayout souye;
     private LinearLayout lixian;
     private LinearLayout shouchang;
     private LinearLayout lishi;
-
     //顶部布局
     private ImageView huancun;
     private ImageView soushuo;
+    private long mExitTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         main_ap_layout.addOnOffsetChangedListener(this);
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -98,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupViewPager(ViewPager viewPager) {
         adapter = new Adapter(getSupportFragmentManager());
 
-        String[] strs = new String[]{"番剧", "分区","推荐", "关注", "发现"};
+        String[] strs = new String[]{"番剧", "分区", "推荐", "关注", "发现"};
 
 
         adapter.addFragment(new FanjuFragment(), strs[0]);
@@ -122,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.huancunx:
             case R.id.lishi:
-                ActivityTools.skipActivity(this,DownloadActivity.class);
+                ActivityTools.skipActivity(this, DownloadActivity.class);
                 break;
             case R.id.shouchang:
 
@@ -131,20 +134,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-    public boolean sz = false;//顶部是不是展开
+
     @Override
     public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-        if (verticalOffset==0){//顶部展开
-           sz=true;
+        if (verticalOffset == 0) {//顶部展开
+            sz = true;
         }
-        if ((appBarLayout.getTotalScrollRange()+verticalOffset)==0){
-            sz=false;
+        if ((appBarLayout.getTotalScrollRange() + verticalOffset) == 0) {
+            sz = false;
         }
     }
-    public boolean getiszangkai(){
+
+    public boolean getiszangkai() {
         return sz;
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if ((System.currentTimeMillis() - mExitTime) > 2000) {
+                Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                mExitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();

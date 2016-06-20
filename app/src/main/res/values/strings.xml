@@ -77,4 +77,9 @@
     <string name="video_screenshot_save_in">截图存放在 %s.</string>
     <string name="video_screenshot_failed">截图失败</string>
     <string name="closing_file">正在退出…</string>
+    <!-- 提示框 -->
+    <string name="comm_comfirm">确定</string>
+    <string name="comm_cancel">取消</string>
+    <string name="comm_notice">温馨提示</string>
+    <string name="i_know">我知道了</string>
 </resources>

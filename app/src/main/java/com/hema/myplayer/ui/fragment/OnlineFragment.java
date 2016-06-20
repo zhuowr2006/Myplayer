@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.hema.myplayer.R;
 import com.hema.myplayer.bean.OnlineVideo;
+import com.hema.myplayer.util.StringUtils;
 import com.hema.myplayer.util.XmlReaderHelper;
 import com.hema.playViewUtil.ui.OnlineVideoActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -127,7 +128,7 @@ public class OnlineFragment extends Fragment implements OnItemClickListener {
             imageLoader.init(ImageLoaderConfiguration.createDefault(getActivity()));
             // 使用DisplayImageOptions.Builder()创建DisplayImageOptions
             options = new DisplayImageOptions.Builder()
-            .imageScaleType(ImageScaleType.EXACTLY)
+                    .imageScaleType(ImageScaleType.EXACTLY)
                     .showImageOnLoading(R.mipmap.userlogo) // 设置图片在下载期间显示的图片
                     .showImageForEmptyUri(R.mipmap.userlogo)// 设置图片Uri为空或是错误的时候显示的图片
                     .showImageOnFail(R.mipmap.userlogo) // 设置图片加载/解码过程中错误时候显示的图片
@@ -146,16 +147,20 @@ public class OnlineFragment extends Fragment implements OnItemClickListener {
                         null);
             }
             ImageView thumbnail = (ImageView) convertView.findViewById(R.id.thumbnail);
-            if (item.iconId > 0)
+            TextView tvname = (TextView) convertView.findViewById(R.id.tv_title);
+            if (item.iconId > 0) {
                 thumbnail.setImageResource(item.iconId);
-            else {
+            } else {
                 thumbnail.setImageDrawable(null);
                 // 异步加载图片
-                imageLoader.displayImage(item.icon_url, thumbnail, options);
+                if (StringUtils.isEmpty(item.icon_url)) {
+                    thumbnail.setVisibility(View.GONE);
+                } else {
+                    thumbnail.setVisibility(View.VISIBLE);
+                    imageLoader.displayImage(item.icon_url, thumbnail, options);
+                }
             }
-            ((TextView) convertView.findViewById(R.id.tv_title))
-                    .setText(item.title);
-
+            tvname.setText(item.title);
             return convertView;
         }
 

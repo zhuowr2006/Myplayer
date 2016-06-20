@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:background="@drawable/noticedialog"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="2dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/notice_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/loading"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp" >
+
+            <ImageView
+                android:id="@+id/notice_Iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_above="@+id/notice_content"
+				android:visibility="gone"
+                android:src="@drawable/publicloading" />
+
+            <TextView
+                android:id="@+id/notice_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:lineSpacingExtra="5dp"
+                android:text="确定要清空所有内容吗?"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notice_buttonLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#dbdbdb" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/notice_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/notidialog_leftbtn_selector"
+                android:gravity="center"
+                android:text="@string/comm_cancel"
+                android:textColor="@color/bili_red"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="0.3dp"
+                android:layout_height="match_parent"
+                android:background="#dbdbdb" />
+
+            <Button
+                android:id="@+id/notice_confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@drawable/notidialog_rightbtn_selector"
+                android:text="@string/comm_comfirm"
+                android:textColor="@color/bili_red"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notice_one_btn_Layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#dbdbdb" />
+
+        <Button
+            android:id="@+id/notice_know"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/notidialog_btn_selector"
+            android:gravity="center"
+            android:text="@string/i_know"
+            android:textColor="@color/bili_red"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

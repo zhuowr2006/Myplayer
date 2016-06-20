@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
             android:background="@color/ijk_transparent_dark"
+            android:visibility="gone"
             android:padding="8dp" />
 
         <android.support.v7.widget.Toolbar
@@ -47,13 +48,14 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:visibility="gone"
             tools:context=".toolbar_widget" />
         <ProgressBar
             android:id="@+id/loading_icon"
             style="@style/mProgress_circle"
             android:layout_gravity="center"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_toLeftOf="@+id/loadstate_tv"
             android:indeterminateDuration="1500"
             android:visibility="gone"
@@ -65,5 +67,6 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
+        android:visibility="gone"
         android:background="@color/ijk_transparent_dark" />
 </android.support.v4.widget.DrawerLayout>

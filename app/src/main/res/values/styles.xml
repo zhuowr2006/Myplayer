@@ -59,5 +59,14 @@
         <item name="android:maxWidth">60dp</item>
         <item name="android:maxHeight">60dp</item>
     </style>
+    <!-- dialog样式 -->
+    <style name="NotiDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
 
 </resources>
