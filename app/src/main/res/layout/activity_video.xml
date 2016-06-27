@@ -52,7 +52,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerVertical="true"
-                        android:src="@mipmap/back_icon" />
+                        android:src="@drawable/back_icon" />
 
                     <TextView
                         android:id="@+id/title"
@@ -66,13 +66,13 @@
                         android:textSize="16sp" />
                     <ImageView
                         android:id="@+id/xiazai"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:clickable="true"
                         android:layout_alignParentRight="true"
                         android:layout_toLeftOf="@+id/soushuo"
                         android:layout_marginRight="20dp"
-                        android:src="@mipmap/xiazai" />
+                        android:src="@drawable/xiazai" />
 
                     <LinearLayout
                         android:id="@+id/play_layout"

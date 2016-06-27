@@ -52,13 +52,13 @@
 
                     <ImageView
                         android:id="@+id/huancunx"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:clickable="true"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/soushuo"
                         android:layout_marginRight="20dp"
-                        android:src="@mipmap/xiazai" />
+                        android:src="@drawable/xiazai" />
 
                     <ImageView
                         android:id="@+id/soushuo"

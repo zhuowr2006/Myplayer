@@ -64,6 +64,7 @@
 
     <!--播放器-->
     <string name="content_desc_lock">锁定</string>
+    <string name="video_back">锁定</string>
     <string name="video_11">1:1</string>
     <string name="video_fit_screen">全屏</string>
     <string name="video_stretch">拉伸</string>

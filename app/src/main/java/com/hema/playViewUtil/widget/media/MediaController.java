@@ -79,7 +79,7 @@ public class MediaController extends FrameLayout implements IMediaControllerex {
     private PopupWindow mWindow;
     private View mAnchor;
     private View mRoot;
-    private ImageButton mLock;
+    private ImageButton mLock,mback;
     private ImageButton mScreenToggle;
     private ImageButton mSnapshot;
     private SeekBar mProgress;
@@ -209,6 +209,13 @@ public class MediaController extends FrameLayout implements IMediaControllerex {
             show();
         }
     };
+
+    private OnClickListener mBackClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mContext.finish();
+        }
+    };
     private OnClickListener mScreenToggleListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -291,6 +298,7 @@ public class MediaController extends FrameLayout implements IMediaControllerex {
             }
         }
     };
+
 
     public MediaController(Context context) {
         super(context);
@@ -418,7 +426,9 @@ public class MediaController extends FrameLayout implements IMediaControllerex {
         mVolLumNum = (ImageView) v.findViewById(R.id.operation_percent);
 
         mLock = (ImageButton) v.findViewById(R.id.mediacontroller_lock);
+        mback = (ImageButton) v.findViewById(R.id.mediacontroller_back);
         mLock.setOnClickListener(mLockClickListener);
+        mback.setOnClickListener(mBackClickListener);
         FractionalTouchDelegate.setupDelegate(mSystemInfoLayout, mLock, new RectF(1.0f, 1f, 1.2f, 1.2f));
 
         mScreenToggle = (ImageButton) v.findViewById(R.id.mediacontroller_screen_size);

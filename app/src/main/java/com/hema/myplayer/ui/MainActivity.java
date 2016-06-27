@@ -123,9 +123,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.souye:
 
                 break;
-            case R.id.huancunx:
-            case R.id.lishi:
+            case R.id.huancun:
                 ActivityTools.skipActivity(this, DownloadActivity.class);
+                break;
+            case R.id.lishi:
+
                 break;
             case R.id.shouchang:
 

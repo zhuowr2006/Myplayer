@@ -31,7 +31,7 @@
                     android:layout_height="30dp"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="20dp"
-                    android:src="@mipmap/back_icon" />
+                    android:src="@drawable/back_icon" />
 
                 <TextView
                     android:id="@+id/title"

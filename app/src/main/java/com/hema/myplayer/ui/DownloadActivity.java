@@ -338,7 +338,7 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
                     break;
                 case STARTED:
 //                    stopBtn.setText("暂停");
-                    stopBtn.setBackgroundResource(R.mipmap.xiazai_btn);
+                    stopBtn.setBackgroundResource(R.drawable.xiazai_btn);
                     pg_text.setText("等待中");
                     break;
                 case LOADING:
@@ -347,7 +347,7 @@ public class DownloadActivity extends AppCompatActivity implements View.OnClickL
                     break;
                 case CANCELLED:
 //                    stopBtn.setText("继续");
-                    stopBtn.setBackgroundResource(R.mipmap.xiazai_btn);
+                    stopBtn.setBackgroundResource(R.drawable.xiazai_btn);
                     break;
                 case SUCCESS:
                     stopBtn.setVisibility(View.INVISIBLE);
