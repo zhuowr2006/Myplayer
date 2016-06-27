@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void findview() {
+        drawerLayout= (DrawerLayout) findViewById(R.id.main_layout);
         main_ap_layout = (AppBarLayout) findViewById(R.id.main_ap_layout);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -92,10 +93,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setCurrentItem(2);
     }
-
+    private  boolean darwerisopen=false;
     private void setListener() {
         huancun.setOnClickListener(this);
         lixian.setOnClickListener(this);
+        drawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                darwerisopen=true;
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                darwerisopen=false;
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -124,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.huancun:
+            case R.id.huancunx:
                 ActivityTools.skipActivity(this, DownloadActivity.class);
                 break;
             case R.id.lishi:
@@ -151,9 +174,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return sz;
     }
 
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (darwerisopen){
+                drawerLayout.closeDrawers();
+                return true;
+            }
             if ((System.currentTimeMillis() - mExitTime) > 2000) {
                 Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
                 mExitTime = System.currentTimeMillis();
